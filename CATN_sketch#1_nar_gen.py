@@ -17,7 +17,7 @@ emotion = ['lovely','intense pain','going to pass out','difficult','terrible','e
 dialogue = ['what happened?','can you see it?','oh...','what does it want?','no.','can you still see it?','Do you remember what it was?','everything is gone.',"it's ok.",'would it be ok?']
  # dialogues are full sentences
 subject = ['you','we','I']
-prep = random.sample(["was", "were"], k=2)
+prep = ["was", "were"]
 
 
 
@@ -56,10 +56,10 @@ def spaceL():
 
 def spaceS():
     objs = random.choice(obj)
-    if objs == obj[3] or obj[4] or obj[5]: #'weeds' or 'steps' or 'leaves':
-        sS = "The " + objs + " " + prep[1] + " " + random.choice(adj) + "."
+    if objs == obj[3] or objs == obj[4] or objs == obj[5]: #'weeds' or 'steps' or 'leaves':
+        sS = "The " + objs + " " + "were" + " " + random.choice(adj) + "."
     else: 
-        sS = "The " + objs + " " + prep[0] + " " + random.choice(adj) + "."
+        sS = "The " + objs + " " + "was" + " " + random.choice(adj) + "."
     return sS
 
 part_count = 1
@@ -89,3 +89,8 @@ for repeat in range(part_count):
     print(spaceL())
     print(spaceS())
     print(' ')
+
+
+
+
+
