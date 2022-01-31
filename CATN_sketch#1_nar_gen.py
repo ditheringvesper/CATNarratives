@@ -10,7 +10,7 @@ pverb = ['waited', 'ran', 'looked', 'stopped', 'turned', 'went', 'followed', 're
 verb = ['wait', 'run', 'look', 'stop', 'turn', 'go', 'follow', 'remember', 'close', 'pass', 'cover','walk', 'sit','watch']
 
 adj = ['visible', 'dark', 'luxuriant', 'outbound', 'blue', 'green', 'grey', 'red', 'silver', 'tall', 'short','narrowing','swelling', 'damped-out','crowded']
-obj = ['rain', 'smell of alcohol and grease', 'path', 'steps', 'leaves', 'sunlight', 'color', 'window', 'glow', 'weeds', 'ticket','bench']
+obj = ['rain', 'smell of alcohol and grease', 'path', 'steps', 'leaves', 'weeds', 'color', 'window', 'glow', 'sunlight', 'ticket','bench']
 environment = ['']
 
 emotion = ['lovely','intense pain','going to pass out','difficult','terrible','embarrassed']
@@ -56,7 +56,7 @@ def spaceL():
 
 def spaceS():
     objs = random.choice(obj)
-    if objs == 'weeds' or 'steps' or 'leaves':
+    if objs == obj[3] or obj[4] or obj[5]: #'weeds' or 'steps' or 'leaves':
         sS = "The " + objs + " " + prep[1] + " " + random.choice(adj) + "."
     else: 
         sS = "The " + objs + " " + prep[0] + " " + random.choice(adj) + "."
@@ -80,13 +80,11 @@ for repeat in range(part_count):
         elif i == line_count - 4:
             print(subaction())
         else:
-            # print(' ')
             print(dial())
     
     print(' ')
     print(subaction())
     print(imperative())
-
     print(' ')
     print(spaceL())
     print(spaceS())
